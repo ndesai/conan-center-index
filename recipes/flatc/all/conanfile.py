@@ -51,5 +51,6 @@ class FlatcConan(ConanFile):
 
     def package_info(self):
         bin_path = os.path.join(self.package_folder, "bin")
+        self.cpp_info.bindirs = ['bin']
         self.output.info('Appending PATH environment variable: %s' % bin_path)
         self.env_info.PATH.append(bin_path)
